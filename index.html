@@ -10,15 +10,7 @@
     <meta name="keywords" content="conserto de celular santo andre, assistência técnica iphone santo andre, reparo de notebook abc, abc smart santo andre">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#080808">
-    <link rel="canonical" href="https://abcsmart.com.br/">
     
-    <!-- Open Graph (Redes Sociais) -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="ABC SMART | Assistência Técnica Premium em Santo André">
-    <meta property="og:description" content="Recupere seu celular ou notebook hoje. Especialistas em iPhone e Samsung.">
-    <meta property="og:url" content="https://abcsmart.com.br/">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1597740985671-2a8a3b80502e?auto=format&fit=crop&q=80&w=1200">
-
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -41,13 +33,11 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Contorno trocado de cinza para branco translúcido para o efeito 'ghost' */
         .text-ghost {
             color: transparent;
             -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.2);
         }
 
-        /* Contorno trocado de cinza para branco */
         .text-outline-white {
             color: transparent;
             -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
@@ -68,7 +58,7 @@
 
         .bento-card {
             background: #121212;
-            border: 1px solid rgba(255, 255, 255, 0.1); /* Contorno branco suave */
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex;
             flex-direction: column;
@@ -76,7 +66,7 @@
             overflow: hidden;
         }
         .bento-card:hover {
-            border-color: rgba(255, 255, 255, 0.4); /* Brilho no hover */
+            border-color: rgba(255, 255, 255, 0.4);
             box-shadow: 0 30px 60px -15px rgba(0,0,0,0.5);
             transform: translateY(-8px);
         }
@@ -122,16 +112,8 @@
             z-index: 2;
         }
 
-        .slider::after {
-            right: 0;
-            top: 0;
-            transform: rotateZ(180deg);
-        }
-
-        .slider::before {
-            left: 0;
-            top: 0;
-        }
+        .slider::after { right: 0; top: 0; transform: rotateZ(180deg); }
+        .slider::before { left: 0; top: 0; }
 
         .slide-track {
             animation: scroll 40s linear infinite;
@@ -147,444 +129,676 @@
             justify-content: center;
             font-size: 1.5rem;
             font-weight: 800;
-            color: rgba(255, 255, 255, 0.2); /* Logos no carrossel mais claras */
+            color: rgba(255, 255, 255, 0.2);
             gap: 12px;
             text-transform: uppercase;
             letter-spacing: 2px;
+        }
+
+        /* Estilo para Conteúdo do Blog */
+        .prose p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: #a1a1aa;
+        }
+        .prose h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-style: italic;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            border-left: 4px solid var(--brand-green);
+            padding-left: 1rem;
+        }
+        .prose h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #f4f4f5;
+        }
+        .prose ul {
+            margin-bottom: 1.5rem;
+            list-style: none;
+        }
+        .prose li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: #a1a1aa;
+        }
+        .prose li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--brand-green);
+            font-weight: bold;
+        }
+        .prose strong {
+            color: white;
+        }
+
+        .hidden-section {
+            display: none;
+        }
+
+        /* Novos estilos para Botão Flutuante */
+        .floating-wa {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            width: 65px;
+            height: 65px;
+            background-color: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: pulse-wa 2s infinite;
+        }
+        .floating-wa:hover {
+            transform: scale(1.1) rotate(10deg);
+        }
+        .floating-wa i {
+            color: white;
+            font-size: 35px;
+        }
+        @keyframes pulse-wa {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        .social-link-nav {
+            transition: all 0.3s ease;
+            color: rgba(255,255,255,0.4);
+        }
+        .social-link-nav:hover {
+            color: white;
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Progress Bar -->
     <div id="progress-bar"></div>
+
+    <!-- Botão Flutuante WhatsApp -->
+    <a href="https://api.whatsapp.com/send?phone=5511992305742" class="floating-wa" target="_blank" title="Chamar no WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
     <!-- Header / Navbar -->
     <header class="fixed w-full z-50 glass-nav transition-all duration-300" id="header">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#" class="flex items-center gap-5 group">
+            <a href="javascript:void(0)" onclick="navigateTo('home')" class="flex items-center gap-5 group">
                 <img src="logoabc.jpeg" alt="Logo ABC SMART" class="h-16 w-auto object-contain transition group-hover:scale-105" onerror="this.src='https://placehold.co/200x200?text=ABC+SMART'">
                 <div class="flex flex-col">
                     <span class="font-bold text-2xl tracking-tighter text-white leading-none">ABC<span class="font-black">SMART</span></span>
-                    <span class="text-[10px] font-bold text-zinc-400 tracking-[0.2em] uppercase">Tech Solutions</span>
                 </div>
             </a>
             
             <nav class="hidden md:flex gap-8 text-sm font-bold uppercase tracking-widest text-zinc-500">
-                <a href="#diferenciais" class="hover:text-white transition">Diferenciais</a>
-                <a href="#servicos" class="hover:text-white transition">Serviços</a>
-                <a href="#blog" class="hover:text-white transition">Dicas</a>
-                <a href="#faq" class="hover:text-white transition">Dúvidas</a>
-                <a href="#localizacao" class="hover:text-white transition">Onde Estamos</a>
+                <a href="javascript:void(0)" onclick="navigateTo('home')" class="hover:text-white transition">Início</a>
+                <a href="#servicos" onclick="if(currentPage !== 'home') navigateTo('home')" class="hover:text-white transition">Serviços</a>
+                <a href="#depoimentos" onclick="if(currentPage !== 'home') navigateTo('home')" class="hover:text-white transition">Depoimentos</a>
+                <a href="#localizacao" onclick="if(currentPage !== 'home') navigateTo('home')" class="hover:text-white transition">Onde Estamos</a>
             </nav>
 
-            <a href="https://api.whatsapp.com/send?phone=5511992305742" aria-label="Fale conosco no WhatsApp" class="whatsapp-btn px-6 py-3 rounded-full text-black font-bold text-xs uppercase tracking-widest hidden md:flex items-center gap-2">
-                <i class="fa-brands fa-whatsapp text-lg"></i>
-                Orçamento Rápido
-            </a>
+            <div class="flex items-center gap-6">
+                <!-- Redes Sociais Header -->
+                <div class="hidden lg:flex items-center gap-4 border-r border-white/10 pr-6">
+                    <a href="https://www.instagram.com/abcsmart.assistencia?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-link-nav text-xl">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/ABCSMARTCELULARES/" target="_blank" class="social-link-nav text-xl">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                </div>
+
+                <a href="https://api.whatsapp.com/send?phone=5511992305742" class="whatsapp-btn px-6 py-3 rounded-full text-black font-bold text-xs uppercase tracking-widest hidden md:flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    Orçamento
+                </a>
+            </div>
         </div>
     </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="min-h-[90vh] pt-40 pb-10 flex items-center relative overflow-hidden">
-            <div class="container mx-auto px-6 relative z-10">
-                <div class="flex flex-col lg:flex-row items-center gap-16">
-                    <div class="lg:w-1/2">
-                        <div class="inline-block px-5 py-2 rounded-full bg-green-500 mb-8 reveal-init shadow-[0_0_20px_rgba(34,197,94,0.3)]">
-                            <span class="text-[11px] font-black uppercase tracking-widest text-black flex items-center gap-2">
-                                <i class="fa-solid fa-location-dot"></i>
-                                Santo André • Desde 2005
-                            </span>
-                        </div>
-                        
-                        <h1 class="hero-title text-white mb-8 italic reveal-init" style="transition-delay: 0.1s">
-                            Seu aparelho <br/>
-                            <span class="text-ghost">Novo de Novo.</span>
-                        </h1>
-                        
-                        <p class="text-xl text-zinc-400 font-medium leading-relaxed max-w-lg mb-10 reveal-init italic" style="transition-delay: 0.2s">
-                            Referência absoluta há quase duas décadas. Especialistas em reviver o que é essencial para você. Conserto de smartphones e notebooks com peças premium e garantia real.
-                        </p>
+    <!-- PÁGINA HOME -->
+    <div id="page-home">
+        <main>
+            <!-- Hero Section -->
+            <section class="min-h-[90vh] pt-40 pb-10 flex items-center relative overflow-hidden">
+                <div class="container mx-auto px-6 relative z-10">
+                    <div class="flex flex-col lg:flex-row items-center gap-16">
+                        <div class="lg:w-1/2">
+                            <div class="inline-block px-5 py-2 rounded-full bg-green-500 mb-8 reveal-init shadow-[0_0_20px_rgba(34,197,94,0.3)]">
+                                <span class="text-[11px] font-black uppercase tracking-widest text-black flex items-center gap-2">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    Santo André • Desde 2005
+                                </span>
+                            </div>
+                            
+                            <h1 class="hero-title text-white mb-8 italic reveal-init">
+                                Seu aparelho <br/>
+                                <span class="text-ghost">Novo de Novo.</span>
+                            </h1>
+                            
+                            <p class="text-xl text-zinc-400 font-medium leading-relaxed max-w-lg mb-10 reveal-init italic">
+                                Referência absoluta há quase duas décadas em Santo André. Especialistas em reviver o que é essencial para você com peças premium e garantia real.
+                            </p>
 
-                        <div class="flex flex-col sm:flex-row gap-4 reveal-init" style="transition-delay: 0.3s">
-                            <a href="https://api.whatsapp.com/send?phone=5511992305742" aria-label="Fale conosco no WhatsApp" class="whatsapp-btn px-10 py-5 rounded-2xl text-black font-[900] uppercase text-xs tracking-widest shadow-xl flex items-center justify-center gap-3">
-                                <i class="fa-brands fa-whatsapp text-xl"></i>
-                                Falar com Técnico
-                            </a>
-                            <a href="#servicos" class="px-10 py-5 rounded-2xl bg-zinc-900 text-white border border-white/10 font-[900] uppercase text-xs tracking-widest hover:bg-zinc-800 transition flex items-center justify-center">
-                                Nossos Serviços
-                            </a>
+                            <div class="flex flex-col sm:flex-row gap-4 reveal-init mb-8">
+                                <a href="https://api.whatsapp.com/send?phone=5511992305742" class="whatsapp-btn px-10 py-5 rounded-2xl text-black font-[900] uppercase text-xs tracking-widest shadow-xl flex items-center justify-center gap-3">
+                                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                                    Falar com Técnico
+                                </a>
+                                <a href="#servicos" class="px-10 py-5 rounded-2xl bg-zinc-900 text-white border border-white/10 font-[900] uppercase text-xs tracking-widest hover:bg-zinc-800 transition flex items-center justify-center">
+                                    Nossos Serviços
+                                </a>
+                            </div>
+
+                            <!-- Links Sociais Hero -->
+                            <div class="flex items-center gap-6 reveal-init border-t border-white/5 pt-8 max-w-sm">
+                                <span class="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500">Siga-nos:</span>
+                                <a href="https://www.instagram.com/abcsmart.assistencia?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="text-zinc-400 hover:text-white transition flex items-center gap-2 text-xs font-bold uppercase tracking-widest">
+                                    <i class="fa-brands fa-instagram text-lg"></i> Instagram
+                                </a>
+                                <a href="https://www.facebook.com/ABCSMARTCELULARES/" target="_blank" class="text-zinc-400 hover:text-white transition flex items-center gap-2 text-xs font-bold uppercase tracking-widest">
+                                    <i class="fa-brands fa-facebook-f text-lg"></i> Facebook
+                                </a>
+                            </div>
                         </div>
 
-                        <div class="mt-12 flex items-center gap-6 text-zinc-500 text-xs font-bold uppercase tracking-widest reveal-init" style="transition-delay: 0.4s">
-                            <span class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> 3 Meses Garantia</span>
-                            <span class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Reparo em 1h</span>
-                        </div>
-                    </div>
-
-                    <div class="lg:w-1/2 relative reveal-init" style="transition-delay: 0.5s">
-                        <div class="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl border border-white/10 rotate-2 hover:rotate-0 transition duration-700">
-                            <img src="https://images.unsplash.com/photo-1597740985671-2a8a3b80502e?auto=format&fit=crop&q=80&w=1000" alt="Técnico especialista realizando reparo em placa de smartphone" class="w-full object-cover transition duration-700 aspect-square">
-                            <div class="absolute bottom-8 left-8 bg-zinc-900/90 backdrop-blur p-6 rounded-3xl shadow-lg border border-white/10 max-w-xs">
-                                <div class="flex items-center gap-4 mb-3">
-                                    <div class="text-3xl font-black text-white">4.9</div>
-                                    <div class="flex text-yellow-400 text-xs">
-                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        <div class="lg:w-1/2 relative reveal-init">
+                            <div class="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl border border-white/10 rotate-2 hover:rotate-0 transition duration-700">
+                                <img src="https://images.unsplash.com/photo-1735875530804-d661ca2001da?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Técnico realizando reparo" class="w-full object-cover aspect-square">
+                                
+                                <div class="absolute bottom-8 left-8 bg-zinc-900/90 backdrop-blur p-6 rounded-3xl shadow-lg border border-white/10 max-w-xs transition hover:scale-105 duration-500">
+                                    <div class="flex items-center gap-4 mb-3">
+                                        <div class="text-3xl font-black text-white">4.9</div>
+                                        <div class="flex text-yellow-400 text-xs">
+                                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                        </div>
                                     </div>
+                                    <p class="text-xs font-semibold text-zinc-300 leading-tight italic">"Melhor assistência de Santo André. Meu iPhone ficou zero!"</p>
+                                    <p class="text-[10px] text-zinc-500 mt-2 font-bold uppercase tracking-wider">— Google Reviews</p>
                                 </div>
-                                <p class="text-xs font-semibold text-zinc-300 leading-tight">"Melhor assistência de Santo André. Meu iPhone ficou zero!"</p>
-                                <p class="text-[10px] text-zinc-500 mt-2 font-bold uppercase tracking-wider">— Google Reviews</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Carrossel de Marcas Atendidas -->
-        <section class="py-10 bg-black border-y border-white/5 overflow-hidden reveal-init" style="transition-delay: 0.6s">
-            <div class="slider">
-                <div class="slide-track">
-                    <div class="slide"><i class="fa-brands fa-apple text-3xl"></i> Apple</div>
-                    <div class="slide"><i class="fa-solid fa-mobile-screen-button text-3xl"></i> Samsung</div>
-                    <div class="slide"><i class="fa-solid fa-microchip text-3xl"></i> Xiaomi</div>
-                    <div class="slide"><i class="fa-solid fa-laptop text-3xl"></i> Motorola</div>
-                    <div class="slide"><i class="fa-solid fa-desktop text-3xl"></i> Dell</div>
-                    <div class="slide"><i class="fa-solid fa-keyboard text-3xl"></i> Lenovo</div>
-                    <div class="slide"><i class="fa-solid fa-bolt text-3xl"></i> Acer</div>
-                    <!-- Duplicata para scroll infinito -->
-                    <div class="slide"><i class="fa-brands fa-apple text-3xl"></i> Apple</div>
-                    <div class="slide"><i class="fa-solid fa-mobile-screen-button text-3xl"></i> Samsung</div>
-                    <div class="slide"><i class="fa-solid fa-microchip text-3xl"></i> Xiaomi</div>
-                    <div class="slide"><i class="fa-solid fa-laptop text-3xl"></i> Motorola</div>
-                    <div class="slide"><i class="fa-solid fa-desktop text-3xl"></i> Dell</div>
-                    <div class="slide"><i class="fa-solid fa-keyboard text-3xl"></i> Lenovo</div>
-                    <div class="slide"><i class="fa-solid fa-bolt text-3xl"></i> Acer</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Bento Grid Services -->
-        <section id="servicos" class="py-32 bg-zinc-950">
-            <div class="container mx-auto px-6">
-                <div class="mb-24 max-w-2xl reveal-scroll">
-                    <h2 class="text-4xl lg:text-7xl font-[900] uppercase tracking-tighter italic leading-none mb-6 text-white">O que nós <br/> <span class="text-outline-white">Dominamos.</span></h2>
-                    <p class="text-xl text-zinc-400 font-medium italic">Tecnologia de ponta para diagnósticos precisos e reparos duradouros.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[400px]">
-                    <div class="md:col-span-2 bento-card rounded-[3rem] p-10 relative group reveal-scroll">
-                        <div class="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
-                        <div class="relative z-10 flex flex-col h-full justify-between">
-                            <div>
-                                <div class="w-12 h-12 bg-white text-black rounded-2xl flex items-center justify-center text-2xl mb-6"><i class="fa-brands fa-apple"></i></div>
-                                <h3 class="text-4xl font-[900] uppercase italic tracking-tighter mb-2 text-white">Especialista Apple</h3>
-                                <p class="text-zinc-400 font-medium max-w-md">Telas, baterias, conectores e Face ID. Peças originais e compatíveis premium para todos os modelos.</p>
-                            </div>
-                            <div class="flex items-center gap-4 mt-8">
-                                <span class="text-xs font-bold uppercase tracking-widest border border-white/10 px-4 py-2 rounded-full bg-zinc-900 text-zinc-300">iPhone 15 Pro Max</span>
-                                <span class="text-xs font-bold uppercase tracking-widest border border-white/10 px-4 py-2 rounded-full bg-zinc-900 text-zinc-300">iPad Air</span>
-                            </div>
-                        </div>
-                        <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?auto=format&fit=crop&q=80&w=800" class="absolute -bottom-10 -right-10 w-80 object-contain group-hover:scale-110 transition duration-500 rotate-[-10deg] brightness-90" alt="Componentes internos de um iPhone">
-                    </div>
-
-                    <div class="bento-card rounded-[3rem] p-10 bg-zinc-900 text-white reveal-scroll border-white/10" style="transition-delay: 0.1s">
-                        <div class="flex flex-col h-full justify-between">
-                            <div>
-                                <i class="fa-solid fa-battery-full text-4xl text-green-500 mb-6"></i>
-                                <h3 class="text-3xl font-[900] uppercase italic tracking-tighter mb-2">Bateria Nova</h3>
-                                <p class="text-zinc-400 text-sm font-medium">Seu celular desligando sozinho? Trocamos sua bateria em 40 minutos.</p>
-                            </div>
-                            <div class="mt-8">
-                                <div class="w-full bg-zinc-800 h-2 rounded-full overflow-hidden border border-white/5">
-                                    <div class="bg-green-500 h-full w-[100%] animate-pulse"></div>
-                                </div>
-                                <p class="text-right text-[10px] font-bold mt-2 text-zinc-500 uppercase tracking-widest">Saúde 100%</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bento-card rounded-[3rem] p-10 reveal-scroll border-white/10" style="transition-delay: 0.2s">
-                        <div class="flex flex-col h-full justify-between">
-                            <div>
-                                <div class="w-12 h-12 bg-blue-600 text-white rounded-2xl flex items-center justify-center text-2xl mb-6"><i class="fa-brands fa-android"></i></div>
-                                <h3 class="text-3xl font-[900] uppercase italic tracking-tighter mb-2 text-white">Linha Android</h3>
-                                <p class="text-zinc-400 text-sm font-medium">Samsung Galaxy (S, A, M, Note), Xiaomi e Motorola. Reparos avançados de placa.</p>
-                            </div>
-                            <a href="https://api.whatsapp.com/send?phone=5511992305742" class="text-xs font-black uppercase tracking-widest underline text-zinc-300 hover:text-blue-500 transition">Cotar Modelo →</a>
-                        </div>
-                    </div>
-
-                    <div class="md:col-span-2 bento-card rounded-[3rem] p-10 overflow-hidden relative group reveal-scroll border-white/10" style="transition-delay: 0.3s">
-                         <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-20 group-hover:scale-105 transition duration-700" alt="Bancada técnica profissional">
-                         <div class="relative z-10 flex flex-col justify-center h-full max-w-lg">
-                             <h3 class="text-4xl font-[900] uppercase italic tracking-tighter mb-4 text-white">Laboratório Próprio</h3>
-                             <p class="text-zinc-400 font-medium text-lg">Nada de enviar seu aparelho para terceiros. Temos técnicos certificados no local para garantir agilidade e segurança aos seus dados.</p>
-                         </div>
+            <!-- Marcas Slider -->
+            <section class="py-10 bg-black border-y border-white/5 overflow-hidden">
+                <div class="slider">
+                    <div class="slide-track">
+                        <div class="slide"><i class="fa-brands fa-apple text-3xl"></i> Apple</div>
+                        <div class="slide"><i class="fa-solid fa-mobile-screen-button text-3xl"></i> Samsung</div>
+                        <div class="slide"><i class="fa-solid fa-microchip text-3xl"></i> Xiaomi</div>
+                        <div class="slide"><i class="fa-solid fa-laptop text-3xl"></i> Motorola</div>
+                        <div class="slide"><i class="fa-solid fa-desktop text-3xl"></i> Dell</div>
+                        <div class="slide"><i class="fa-solid fa-keyboard text-3xl"></i> Lenovo</div>
+                        <div class="slide"><i class="fa-solid fa-bolt text-3xl"></i> Acer</div>
+                        <!-- Duplicata para infinito -->
+                        <div class="slide"><i class="fa-brands fa-apple text-3xl"></i> Apple</div>
+                        <div class="slide"><i class="fa-solid fa-mobile-screen-button text-3xl"></i> Samsung</div>
+                        <div class="slide"><i class="fa-solid fa-microchip text-3xl"></i> Xiaomi</div>
+                        <div class="slide"><i class="fa-solid fa-laptop text-3xl"></i> Motorola</div>
+                        <div class="slide"><i class="fa-solid fa-desktop text-3xl"></i> Dell</div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Dicas do Blog -->
-        <section id="blog" class="py-32 bg-black overflow-hidden">
-            <div class="container mx-auto px-6">
-                <div class="flex flex-col lg:flex-row justify-between items-end mb-24 gap-12 text-white">
-                    <div class="max-w-3xl">
-                        <h2 class="text-4xl lg:text-7xl font-[900] uppercase tracking-tighter italic text-white leading-none mb-8">Dicas de <br> <span class="text-outline-white">Especialista.</span></h2>
-                        <p class="text-xl text-zinc-400 font-medium italic">Aprenda a cuidar do seu aparelho e evite gastos desnecessários.</p>
+            <!-- Serviços Bento Grid -->
+            <section id="servicos" class="py-32 bg-zinc-950">
+                <div class="container mx-auto px-6">
+                    <div class="mb-24 max-w-2xl reveal-scroll">
+                        <h2 class="text-4xl lg:text-7xl font-[900] uppercase tracking-tighter italic leading-none mb-6 text-white">O que nós <br/> <span class="text-outline-white">Dominamos.</span></h2>
+                        <p class="text-xl text-zinc-400 font-medium italic">Tecnologia de ponta para diagnósticos precisos e reparos duradouros.</p>
                     </div>
-                    <a href="https://abcsmart.com.br/blog/" class="text-[10px] font-black uppercase tracking-widest border-b-2 border-white pb-1 hover:text-zinc-500 transition italic">Blog Completo →</a>
-                </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                    <article class="blog-card reveal-scroll group cursor-pointer" onclick="window.location.href='https://abcsmart.com.br/como-nao-viciar-o-iphone/'">
-                        <div class="overflow-hidden rounded-[3.5rem] mb-10 shadow-lg border border-white/10 aspect-video relative">
-                            <img src="https://abcsmart.com.br/wp-content/uploads/2024/08/Saude-do-celular-samsung-1.jpg" alt="Saúde bateria iPhone" class="w-full h-full object-cover transition duration-500" loading="lazy">
-                            <div class="absolute top-6 left-6 bg-white text-black text-[8px] font-black uppercase px-4 py-1 rounded-full tracking-widest italic">Saúde Técnica</div>
-                        </div>
-                        <h3 class="text-2xl font-black uppercase leading-tight mb-4 italic text-white group-hover:underline decoration-zinc-700">Como não viciar o seu iPhone?</h3>
-                        <p class="text-zinc-500 text-sm italic font-medium">Hábitos simples podem dobrar a vida útil da sua bateria.</p>
-                    </article>
-
-                    <article class="blog-card reveal-scroll group cursor-pointer" style="transition-delay: 0.1s" onclick="window.location.href='https://abcsmart.com.br/celular-samsung-nao-carrega/'">
-                        <div class="overflow-hidden rounded-[3.5rem] mb-10 shadow-lg border border-white/10 aspect-video relative">
-                            <img src="https://abcsmart.com.br/wp-content/uploads/2024/07/celular-samsung-nao-carrega-1.jpg" alt="Samsung não carrega" class="w-full h-full object-cover transition duration-500" loading="lazy">
-                            <div class="absolute top-6 left-6 bg-white text-black text-[8px] font-black uppercase px-4 py-1 rounded-full tracking-widest italic">Diagnóstico</div>
-                        </div>
-                        <h3 class="text-2xl font-black uppercase leading-tight mb-4 italic text-white group-hover:underline decoration-zinc-700">Samsung não carrega? Entenda.</h3>
-                        <p class="text-zinc-500 text-sm italic font-medium">Saiba se o problema é no conector, cabo ou placa.</p>
-                    </article>
-
-                    <article class="blog-card reveal-scroll group cursor-pointer" style="transition-delay: 0.2s" onclick="window.location.href='https://abcsmart.com.br/wifi-do-notebook-nao-ativa/'">
-                        <div class="overflow-hidden rounded-[3.5rem] mb-10 shadow-lg border border-white/10 aspect-video relative">
-                            <img src="https://abcsmart.com.br/wp-content/uploads/2024/08/Wifi-do-notebook-nao-ativa-3.jpg" alt="Wi-fi notebook" class="w-full h-full object-cover transition duration-500" loading="lazy">
-                            <div class="absolute top-6 left-6 bg-white text-black text-[8px] font-black uppercase px-4 py-1 rounded-full tracking-widest italic">Informática</div>
-                        </div>
-                        <h3 class="text-2xl font-black uppercase leading-tight mb-4 italic text-white group-hover:underline decoration-zinc-700">Wi-Fi do notebook não ativa?</h3>
-                        <p class="text-zinc-500 text-sm italic font-medium">Passo a passo para resolver problemas de Wi-Fi.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Notebook Section SEO -->
-        <section id="notebooks" class="py-32 bg-zinc-950 text-white rounded-t-[5rem] border-t border-white/10">
-            <div class="container mx-auto px-6">
-                <div class="max-w-4xl mb-24 reveal-scroll">
-                    <h2 class="text-5xl lg:text-8xl font-[900] uppercase tracking-tighter italic leading-none mb-8 text-white">Conserto de <br> <span class="text-white/10">Notebook.</span></h2>
-                    <p class="text-xl lg:text-3xl text-zinc-400 font-medium italic">Recuperamos Dell, Acer, HP e MacBook em Santo André.</p>
-                </div>
-
-                <div class="flex flex-col lg:flex-row gap-16 items-center">
-                    <div class="lg:w-1/2 reveal-scroll">
-                        <div class="space-y-8 text-zinc-400">
-                            <div class="flex gap-6 items-start">
-                                <div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center shrink-0 font-bold">01</div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[400px]">
+                        <div class="md:col-span-2 bento-card rounded-[3rem] p-10 relative group reveal-scroll">
+                            <div class="relative z-10 flex flex-col h-full justify-between">
                                 <div>
-                                    <h3 class="text-2xl font-bold uppercase mb-2 text-white">Formatação e Backup</h3>
-                                    <p>Seu Windows ou Mac está lento? Deixamos ele rápido sem perder seus arquivos.</p>
+                                    <div class="w-12 h-12 bg-white text-black rounded-2xl flex items-center justify-center text-2xl mb-6"><i class="fa-brands fa-apple"></i></div>
+                                    <h3 class="text-4xl font-[900] uppercase italic tracking-tighter mb-2 text-white">Especialista Apple</h3>
+                                    <p class="text-zinc-400 font-medium max-w-md mb-6">Telas, baterias, conectores e Face ID. Peças de alta qualidade para todos os modelos.</p>
+                                    <a href="https://api.whatsapp.com/send?phone=5511992305742" class="inline-flex items-center gap-2 text-green-500 font-black uppercase text-[10px] tracking-widest hover:gap-4 transition-all">Consultar Orçamento <i class="fa-solid fa-arrow-right"></i></a>
                                 </div>
                             </div>
-                            <div class="flex gap-6 items-start">
-                                <div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center shrink-0 font-bold">02</div>
+                            <img src="https://images.unsplash.com/photo-1614312385003-dcea7b8b6ab6?q=80&w=1326&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="absolute -bottom-10 -right-10 w-80 object-contain group-hover:scale-110 transition duration-500 rotate-[-10deg] brightness-75" alt="iPhone Internals">
+                        </div>
+
+                        <div class="bento-card rounded-[3rem] p-10 bg-zinc-900 text-white reveal-scroll border-white/10">
+                            <div class="flex flex-col h-full justify-between">
                                 <div>
-                                    <h3 class="text-2xl font-bold uppercase mb-2 text-white">Troca de Tela e Teclado</h3>
-                                    <p>Telas quebradas ou carcaça danificada. Temos peças em estoque.</p>
+                                    <i class="fa-solid fa-battery-full text-4xl text-green-500 mb-6"></i>
+                                    <h3 class="text-3xl font-[900] uppercase italic tracking-tighter mb-2">Bateria Nova</h3>
+                                    <p class="text-zinc-400 text-sm font-medium mb-4">Troca rápida em 40 minutos com garantia e saúde 100%.</p>
+                                    <a href="https://api.whatsapp.com/send?phone=5511992305742" class="text-green-500 font-black uppercase text-[10px] tracking-widest">Agendar Troca →</a>
+                                </div>
+                                <div class="mt-8">
+                                    <div class="w-full bg-zinc-800 h-2 rounded-full overflow-hidden">
+                                        <div class="bg-green-500 h-full w-[100%] animate-pulse"></div>
+                                    </div>
+                                    <p class="text-right text-[10px] font-bold mt-2 text-zinc-500 uppercase tracking-widest">Saúde Ativa</p>
                                 </div>
                             </div>
-                            <div class="flex gap-6 items-start">
-                                <div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center shrink-0 font-bold">03</div>
+                        </div>
+
+                        <div class="bento-card rounded-[3rem] p-10 reveal-scroll border-white/10">
+                            <div class="flex flex-col h-full justify-between">
                                 <div>
-                                    <h3 class="text-2xl font-bold uppercase mb-2 text-white">Upgrade de SSD e RAM</h3>
-                                    <p>Melhore a performance do seu notebook em até 10x instalando um SSD.</p>
+                                    <div class="w-12 h-12 bg-blue-600 text-white rounded-2xl flex items-center justify-center text-2xl mb-6"><i class="fa-brands fa-android"></i></div>
+                                    <h3 class="text-3xl font-[900] uppercase italic tracking-tighter mb-2 text-white">Linha Android</h3>
+                                    <p class="text-zinc-400 text-sm font-medium mb-6">Samsung Galaxy, Xiaomi e Motorola. Reparos avançados de placa e software.</p>
+                                    <a href="https://api.whatsapp.com/send?phone=5511992305742" class="px-6 py-3 rounded-xl border border-white/10 text-white text-[10px] font-black uppercase tracking-widest hover:bg-white hover:text-black transition">Pedir Orçamento</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="md:col-span-2 bento-card rounded-[3rem] p-10 overflow-hidden relative group reveal-scroll border-white/10">
+                             <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-20 transition duration-700" alt="Laboratório">
+                             <div class="relative z-10 flex flex-col justify-center h-full max-w-lg">
+                                 <h3 class="text-4xl font-[900] uppercase italic tracking-tighter mb-4 text-white">Laboratório Próprio</h3>
+                                 <p class="text-zinc-400 font-medium text-lg mb-6">Seu aparelho não sai da nossa loja. Segurança total para seus dados e agilidade na entrega.</p>
+                                 <a href="https://api.whatsapp.com/send?phone=5511992305742" class="whatsapp-btn w-fit px-8 py-4 rounded-2xl text-black font-black uppercase text-xs tracking-widest flex items-center gap-2">
+                                     <i class="fa-brands fa-whatsapp"></i> Falar Direto no Laboratório
+                                 </a>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Blog Section -->
+            <section id="blog" class="py-32 bg-black overflow-hidden border-t border-white/5">
+                <div class="container mx-auto px-6">
+                    <div class="flex flex-col lg:flex-row justify-between items-end mb-24 gap-12 text-white">
+                        <div class="max-w-3xl">
+                            <h2 class="text-4xl lg:text-7xl font-[900] uppercase tracking-tighter italic text-white leading-none mb-8">Dicas de <br> <span class="text-outline-white">Especialista.</span></h2>
+                            <p class="text-xl text-zinc-400 font-medium italic">Aprenda a cuidar do seu aparelho e evite gastos desnecessários.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                        <article class="blog-card reveal-scroll group cursor-pointer" onclick="navigateTo('post-bateria')">
+                            <div class="overflow-hidden rounded-[3.5rem] mb-10 shadow-lg border border-white/10 aspect-video relative">
+                                <img src="https://images.unsplash.com/photo-1658992021955-d09828fb6136?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Saúde bateria" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <div class="absolute top-6 left-6 bg-white text-black text-[8px] font-black uppercase px-4 py-1 rounded-full tracking-widest italic">Saúde Técnica</div>
+                            </div>
+                            <h3 class="text-2xl font-black uppercase leading-tight mb-4 italic text-white group-hover:underline decoration-green-500">Como não viciar o seu iPhone?</h3>
+                            <p class="text-zinc-500 text-sm italic font-medium">Hábitos simples podem dobrar a vida útil da sua bateria.</p>
+                        </article>
+
+                        <article class="blog-card reveal-scroll group cursor-pointer" onclick="navigateTo('post-samsung')">
+                            <div class="overflow-hidden rounded-[3.5rem] mb-10 shadow-lg border border-white/10 aspect-video relative">
+                                <img src="https://images.unsplash.com/photo-1583573636246-18cb2246697f?q=80&w=1338&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Samsung não carrega" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <div class="absolute top-6 left-6 bg-white text-black text-[8px] font-black uppercase px-4 py-1 rounded-full tracking-widest italic">Diagnóstico</div>
+                            </div>
+                            <h3 class="text-2xl font-black uppercase leading-tight mb-4 italic text-white group-hover:underline decoration-blue-500">Samsung não carrega? Entenda.</h3>
+                            <p class="text-zinc-500 text-sm italic font-medium">Saiba se o problema é no conector, cabo ou placa.</p>
+                        </article>
+
+                        <article class="blog-card reveal-scroll group cursor-pointer" onclick="navigateTo('post-wifi')">
+                            <div class="overflow-hidden rounded-[3.5rem] mb-10 shadow-lg border border-white/10 aspect-video relative">
+                                <img src="https://images.unsplash.com/photo-1516044734145-07ca8eef8731?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Wi-fi notebook" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <div class="absolute top-6 left-6 bg-white text-black text-[8px] font-black uppercase px-4 py-1 rounded-full tracking-widest italic">Informática</div>
+                            </div>
+                            <h3 class="text-2xl font-black uppercase leading-tight mb-4 italic text-white group-hover:underline decoration-zinc-500">Wi-Fi do notebook não ativa?</h3>
+                            <p class="text-zinc-500 text-sm italic font-medium">Passo a passo para resolver problemas de Wi-Fi.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Depoimentos de Clientes -->
+            <section id="depoimentos" class="py-32 bg-black border-t border-white/5">
+                <div class="container mx-auto px-6">
+                    <div class="mb-20 text-center reveal-scroll">
+                        <h2 class="text-4xl lg:text-6xl font-[900] uppercase tracking-tighter italic text-white mb-4">Quem Confia <br> <span class="text-outline-white">Recomenda.</span></h2>
+                        <p class="text-zinc-500 font-medium italic">Confira o que nossos clientes dizem sobre nossa assistência técnica.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="p-10 bg-zinc-900/50 border border-white/10 rounded-[3rem] reveal-scroll">
+                            <div class="flex text-yellow-500 mb-6 gap-1">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-zinc-300 italic mb-8">"Melhor conserto de iPhone em Santo André. Trocaram a tela em 40 minutos e ficou perfeito. Atendimento nota 10!"</p>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-zinc-800 rounded-full flex items-center justify-center text-white font-bold">R</div>
+                                <div>
+                                    <h4 class="font-bold text-white uppercase text-xs tracking-widest">Ricardo Silva</h4>
+                                    <span class="text-[10px] text-zinc-500 font-black uppercase">Cliente Google</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-10 bg-zinc-900/50 border border-white/10 rounded-[3rem] reveal-scroll">
+                            <div class="flex text-yellow-500 mb-6 gap-1">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-zinc-300 italic mb-8">"Meu notebook Dell não ligava mais. Em 2 dias resolveram o problema na placa e ainda fizeram uma limpeza. Muito profissionais."</p>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-zinc-800 rounded-full flex items-center justify-center text-white font-bold">M</div>
+                                <div>
+                                    <h4 class="font-bold text-white uppercase text-xs tracking-widest">Mariana Costa</h4>
+                                    <span class="text-[10px] text-zinc-500 font-black uppercase">Cliente Google</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-10 bg-zinc-900/50 border border-white/10 rounded-[3rem] reveal-scroll">
+                            <div class="flex text-yellow-500 mb-6 gap-1">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-zinc-300 italic mb-8">"Preço justo e peças de qualidade. Já arrumei meu Samsung e o iPad dos meus filhos. Recomendo de olhos fechados!"</p>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-zinc-800 rounded-full flex items-center justify-center text-white font-bold">F</div>
+                                <div>
+                                    <h4 class="font-bold text-white uppercase text-xs tracking-widest">Felipe Santos</h4>
+                                    <span class="text-[10px] text-zinc-500 font-black uppercase">Cliente Google</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="lg:w-1/2 reveal-scroll">
-                        <img src="https://images.unsplash.com/photo-1591405351990-4726e331f141?auto=format&fit=crop&q=80&w=1000" class="rounded-[3rem] border border-white/10 shadow-2xl aspect-video object-cover" alt="Reparo notebook">
-                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Depoimentos de Clientes -->
-        <section id="depoimentos" class="py-32 bg-black border-t border-white/5">
-            <div class="container mx-auto px-6">
-                <div class="mb-20 text-center reveal-scroll">
-                    <h2 class="text-4xl lg:text-6xl font-[900] uppercase tracking-tighter italic text-white mb-4">Quem Confia <br> <span class="text-outline-white">Recomenda.</span></h2>
-                    <p class="text-zinc-500 font-medium italic">Confira o que nossos clientes dizem sobre nossa assistência técnica.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Depoimento 1 -->
-                    <div class="p-10 bg-zinc-900/50 border border-white/10 rounded-[3rem] reveal-scroll">
-                        <div class="flex text-yellow-500 mb-6 gap-1">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-zinc-300 italic mb-8">"Melhor conserto de iPhone em Santo André. Trocaram a tela em 40 minutos e ficou perfeito. Atendimento nota 10!"</p>
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-zinc-800 rounded-full border border-white/5 flex items-center justify-center text-white font-bold">R</div>
-                            <div>
-                                <h4 class="font-bold text-white uppercase text-xs tracking-widest">Ricardo Silva</h4>
-                                <span class="text-[10px] text-zinc-500 font-black uppercase">Cliente Google</span>
-                            </div>
-                        </div>
+            <!-- FAQ Section -->
+            <section id="faq" class="py-32 bg-black">
+                <div class="container mx-auto px-6 max-w-4xl">
+                    <div class="text-center mb-20 reveal-scroll">
+                        <span class="text-xs font-black uppercase tracking-widest text-zinc-600 mb-4 block">Tira Dúvidas</span>
+                        <h2 class="text-4xl lg:text-6xl font-[900] uppercase tracking-tighter italic text-white">Perguntas <br> Frequentes</h2>
                     </div>
-                    <!-- Depoimento 2 -->
-                    <div class="p-10 bg-zinc-900/50 border border-white/10 rounded-[3rem] reveal-scroll" style="transition-delay: 0.1s">
-                        <div class="flex text-yellow-500 mb-6 gap-1">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <div class="space-y-4">
+                        <div class="border-b border-white/10 pb-8 reveal-scroll">
+                            <button class="w-full text-left flex justify-between items-center group faq-btn">
+                                <span class="text-xl font-bold italic text-zinc-400 group-hover:text-white transition">Quanto tempo leva o conserto?</span>
+                                <span class="text-2xl font-light text-zinc-600 group-hover:text-white transition">+</span>
+                            </button>
+                            <p class="mt-4 text-zinc-500 leading-relaxed hidden">A maioria dos serviços (troca de tela, bateria) é realizada em até 1 hora. Reparos de placa podem levar de 1 a 3 dias úteis.</p>
                         </div>
-                        <p class="text-zinc-300 italic mb-8">"Meu notebook Dell não ligava mais. Em 2 dias resolveram o problema na placa e ainda fizeram uma limpeza. Muito profissionais."</p>
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-zinc-800 rounded-full border border-white/5 flex items-center justify-center text-white font-bold">M</div>
-                            <div>
-                                <h4 class="font-bold text-white uppercase text-xs tracking-widest">Mariana Costa</h4>
-                                <span class="text-[10px] text-zinc-500 font-black uppercase">Cliente Google</span>
-                            </div>
+                        <div class="border-b border-white/10 pb-8 reveal-scroll">
+                            <button class="w-full text-left flex justify-between items-center group faq-btn">
+                                <span class="text-xl font-bold italic text-zinc-400 group-hover:text-white transition">Vocês buscam o aparelho?</span>
+                                <span class="text-2xl font-light text-zinc-600 group-hover:text-white transition">+</span>
+                            </button>
+                            <p class="mt-4 text-zinc-500 leading-relaxed hidden">Sim! Temos serviço de leva e traz via motoboy para Santo André e região. Consulte a taxa no WhatsApp.</p>
                         </div>
-                    </div>
-                    <!-- Depoimento 3 -->
-                    <div class="p-10 bg-zinc-900/50 border border-white/10 rounded-[3rem] reveal-scroll" style="transition-delay: 0.2s">
-                        <div class="flex text-yellow-500 mb-6 gap-1">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-zinc-300 italic mb-8">"Preço justo e peças de qualidade. Já arrumei meu Samsung e o iPad dos meus filhos. Recomendo de olhos fechados!"</p>
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-zinc-800 rounded-full border border-white/5 flex items-center justify-center text-white font-bold">F</div>
-                            <div>
-                                <h4 class="font-bold text-white uppercase text-xs tracking-widest">Felipe Santos</h4>
-                                <span class="text-[10px] text-zinc-500 font-black uppercase">Cliente Google</span>
-                            </div>
+                        <div class="border-b border-white/10 pb-8 reveal-scroll">
+                            <button class="w-full text-left flex justify-between items-center group faq-btn">
+                                <span class="text-xl font-bold italic text-zinc-400 group-hover:text-white transition">Qual a garantia?</span>
+                                <span class="text-2xl font-light text-zinc-600 group-hover:text-white transition">+</span>
+                            </button>
+                            <p class="mt-4 text-zinc-500 leading-relaxed hidden">Oferecemos 3 meses (90 dias) de garantia legal para todos os serviços realizados.</p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- FAQ Section -->
-        <section id="faq" class="py-32 bg-black">
+            <!-- Localização -->
+            <section id="localizacao" class="py-32 bg-zinc-950 border-t border-white/10">
+                <div class="container mx-auto px-6">
+                    <div class="mb-20">
+                        <h2 class="text-4xl lg:text-6xl font-[900] uppercase tracking-tighter italic text-white leading-none mb-6">Nossa <br> <span class="text-outline-white">Localização.</span></h2>
+                        <p class="text-xl text-zinc-400 font-medium italic">Visite nossa loja no centro de Santo André.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+                        <div class="lg:col-span-2">
+                            <div class="rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl h-[450px]">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.30904920367!2d-46.528498625231265!3d-23.660927165256616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce42887831645b%3A0x39b57a6d61680671!2sABC%20Smart%20-%20Assist%C3%AAncia%20T%C3%A9cnica%20em%20Santo%20Andr%C3%A9!5e1!3m2!1spt-BR!2sbr!4v1770397296633!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="space-y-8">
+                            <div class="p-8 bg-zinc-900/50 border border-white/10 rounded-[2.5rem]">
+                                <h3 class="text-white font-black uppercase text-xs tracking-widest mb-4 flex items-center gap-2">
+                                    <i class="fa-solid fa-map-pin text-green-500"></i> Endereço
+                                </h3>
+                                <p class="text-zinc-400 font-medium italic">Rua Siqueira Campos, 660<br>Centro, Santo André - SP<br>CEP: 09010-210</p>
+                            </div>
+                            <div class="p-8 bg-zinc-900/50 border border-white/10 rounded-[2.5rem]">
+                                <h3 class="text-white font-black uppercase text-xs tracking-widest mb-4 flex items-center gap-2">
+                                    <i class="fa-solid fa-clock text-green-500"></i> Horário
+                                </h3>
+                                <ul class="text-zinc-400 font-medium italic space-y-1">
+                                    <li>Segunda a Sexta: 09h às 18h</li>
+                                    <li>Sábado: 09h às 13h</li>
+                                </ul>
+                            </div>
+                            <!-- CTA Extra Localização -->
+                            <a href="https://api.whatsapp.com/send?phone=5511992305742" class="block w-full text-center p-6 bg-white text-black font-black uppercase text-[10px] tracking-[0.2em] rounded-[2.5rem] hover:bg-green-500 transition-colors">Solicitar Coleta em Casa</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- POST PAGES (SPA) -->
+    
+    <!-- Artigo: Como não viciar iPhone -->
+    <div id="page-post-bateria" class="hidden-section">
+        <article class="pt-40 pb-32">
             <div class="container mx-auto px-6 max-w-4xl">
-                <div class="text-center mb-20 reveal-scroll">
-                    <span class="text-xs font-black uppercase tracking-widest text-zinc-600 mb-4 block">Tira Dúvidas</span>
-                    <h2 class="text-4xl lg:text-6xl font-[900] uppercase tracking-tighter italic text-white">Perguntas <br> Frequentes</h2>
-                </div>
+                <header class="mb-16">
+                    <button onclick="navigateTo('home')" class="mb-12 flex items-center gap-3 text-zinc-500 hover:text-white transition group">
+                        <i class="fa-solid fa-arrow-left transition group-hover:-translate-x-1"></i>
+                        <span class="text-xs font-black uppercase tracking-widest">Voltar para Início</span>
+                    </button>
+                    <div class="flex items-center gap-4 mb-8">
+                        <span class="px-4 py-1 rounded-full bg-green-500/10 text-green-500 border border-green-500/20 text-[10px] font-black uppercase tracking-widest italic">Guia Definitivo</span>
+                        <span class="text-zinc-600 text-[10px] font-bold uppercase tracking-widest">Leitura: 4 min</span>
+                    </div>
+                    <h1 class="text-4xl lg:text-7xl font-[900] uppercase italic tracking-tighter leading-none text-white mb-10">Como não viciar o iPhone? Veja como ter um uso saudável!</h1>
+                    <div class="rounded-[3rem] overflow-hidden border border-white/10 aspect-video mb-16">
+                        <img src="https://images.unsplash.com/photo-1658992021955-d09828fb6136?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-full h-full object-cover">
+                    </div>
+                </header>
+                <div class="prose max-w-none">
+                    <p class="text-xl italic font-medium text-white mb-12">Manter a saúde da bateria do seu iPhone é essencial para garantir que ele funcione de maneira eficiente e duradoura. Neste texto, abordaremos como evitar o vício da bateria do iPhone para orientar você sobre as melhores práticas.</p>
+                    
+                    <h2>Como não viciar o iPhone?</h2>
+                    <p>Você já notou que a bateria do seu iPhone não dura tanto quanto costumava? Ou talvez tenha percebido que o celular demora mais tempo para carregar completamente? Esses são sinais de que a bateria pode estar viciada.</p>
+                    
+                    <h3>Não use o celular enquanto ele estiver carregando</h3>
+                    <p>Um dos principais fatores que contribuem para o vício da bateria é o uso do iPhone enquanto ele está carregando. Quando você usa o celular durante o carregamento, a bateria é submetida a ciclos repetidos de carga e descarga em um curto período. Isso não só aquece a bateria, mas também a desgasta mais rapidamente, diminuindo sua eficiência ao longo do tempo.</p>
+                    <p>Sempre que possível, deixe o iPhone carregando sem utilizá-lo. Isso permite que a bateria carregue de maneira constante e uniforme, reduzindo o risco de aquecimento e desgaste.</p>
+                    
+                    <h3>Desative recursos desnecessários</h3>
+                    <p>Muitos usuários não percebem que diversos recursos e funções do iPhone, embora úteis, consomem energia continuamente. Alguns dos principais culpados incluem:</p>
+                    <ul>
+                        <li><strong>Serviços de Localização:</strong> Aplicativos que utilizam GPS para fornecer informações baseadas em localização.</li>
+                        <li><strong>Atualizações em Segundo Plano:</strong> Apps que atualizam dados e conteúdos automaticamente, mesmo quando não estão em uso.</li>
+                        <li><strong>Notificações Push:</strong> Mensagens e alertas constantes de aplicativos que não são essenciais.</li>
+                        <li><strong>Brilho Automático:</strong> Ajuste automático do brilho da tela, que pode não ser necessário o tempo todo.</li>
+                    </ul>
+                    <p>Para evitar o vício da bateria do seu iPhone, é importante desativar ou limitar os recursos que não são essenciais para o uso diário. Desative os serviços de localização para aplicativos que não precisam dessa função constantemente e as notificações push para aplicativos que não são essenciais. Isso reduzirá significativamente o consumo de energia.</p>
+                    
+                    <h3>Mantenha a temperatura adequada</h3>
+                    <p>Outra causa do vício da bateria é a exposição do iPhone a temperaturas extremas, tanto altas quanto baixas. As baterias de íon de lítio são sensíveis a variações de temperatura e podem sofrer danos quando não mantidas dentro da faixa ideal de operação.</p>
+                    <p>Nunca deixe o iPhone dentro do carro em dias quentes ou sob luz solar direta por longos períodos. Durante o carregamento, evite usar o iPhone para tarefas que gerem muito calor, como jogos ou streaming de vídeos.</p>
 
-                <div class="space-y-4">
-                    <div class="border-b border-white/10 pb-8 reveal-scroll">
-                        <button class="w-full text-left flex justify-between items-center group">
-                            <span class="text-xl font-bold italic text-zinc-400 group-hover:text-white transition">Quanto tempo leva o conserto?</span>
-                            <span class="text-2xl font-light text-zinc-600 group-hover:text-white transition">+</span>
-                        </button>
-                        <p class="mt-4 text-zinc-500 leading-relaxed hidden">A maioria dos serviços (troca de tela, bateria) é realizada em até 1 hora. Reparos de placa podem levar de 1 a 3 dias úteis.</p>
-                    </div>
-                    <div class="border-b border-white/10 pb-8 reveal-scroll">
-                        <button class="w-full text-left flex justify-between items-center group">
-                            <span class="text-xl font-bold italic text-zinc-400 group-hover:text-white transition">Vocês buscam o aparelho?</span>
-                            <span class="text-2xl font-light text-zinc-600 group-hover:text-white transition">+</span>
-                        </button>
-                        <p class="mt-4 text-zinc-500 leading-relaxed hidden">Sim! Temos serviço de leva e traz via motoboy para Santo André e região. Consulte a taxa no WhatsApp.</p>
-                    </div>
-                    <div class="border-b border-white/10 pb-8 reveal-scroll">
-                        <button class="w-full text-left flex justify-between items-center group">
-                            <span class="text-xl font-bold italic text-zinc-400 group-hover:text-white transition">Qual a garantia?</span>
-                            <span class="text-2xl font-light text-zinc-600 group-hover:text-white transition">+</span>
-                        </button>
-                        <p class="mt-4 text-zinc-500 leading-relaxed hidden">Oferecemos 3 meses (90 dias) de garantia legal para todos os serviços realizados.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Seção de Localização / Google Maps -->
-        <section id="localizacao" class="py-32 bg-zinc-950 border-t border-white/10">
-            <div class="container mx-auto px-6">
-                <div class="mb-20 reveal-scroll">
-                    <h2 class="text-4xl lg:text-6xl font-[900] uppercase tracking-tighter italic text-white leading-none mb-6">Nossa <br> <span class="text-outline-white">Localização.</span></h2>
-                    <p class="text-xl text-zinc-400 font-medium italic">Visite nossa loja no centro de Santo André.</p>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
-                    <div class="lg:col-span-2 reveal-scroll">
-                        <div class="rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl h-[450px]">
-                            <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.30904920367!2d-46.528498625231265!3d-23.660927165256616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce42887831645b%3A0x39b57a6d61680671!2sABC%20Smart%20-%20Assist%C3%AAncia%20T%C3%A9cnica%20em%20Santo%20Andr%C3%A9!5e1!3m2!1spt-BR!2sbr!4v1770397296633!5m2!1spt-BR!2sbr" 
-                                width="100%" 
-                                height="100%" 
-                                style="border:0;" 
-                                allowfullscreen="" 
-                                loading="lazy" 
-                                referrerpolicy="no-referrer-when-downgrade">
-                            </iframe>
-                        </div>
-                    </div>
-                    <div class="space-y-8 reveal-scroll" style="transition-delay: 0.1s">
-                        <div class="p-8 bg-zinc-900/50 border border-white/10 rounded-[2.5rem]">
-                            <h3 class="text-white font-black uppercase text-xs tracking-widest mb-4 flex items-center gap-2">
-                                <i class="fa-solid fa-map-pin text-green-500"></i> Endereço
-                            </h3>
-                            <p class="text-zinc-400 font-medium italic">Rua Siqueira Campos, 660<br>Centro, Santo André - SP<br>CEP: 09010-210</p>
-                        </div>
-                        <div class="p-8 bg-zinc-900/50 border border-white/10 rounded-[2.5rem]">
-                            <h3 class="text-white font-black uppercase text-xs tracking-widest mb-4 flex items-center gap-2">
-                                <i class="fa-solid fa-clock text-green-500"></i> Horário
-                            </h3>
-                            <ul class="text-zinc-400 font-medium italic space-y-1">
-                                <li>Segunda a Sexta: 09h às 18h</li>
-                                <li>Sábado: 09h às 13h</li>
-                            </ul>
-                        </div>
-                        <a href="https://maps.app.goo.gl/95u3N9i7C86K3v8S9" target="_blank" class="w-full px-8 py-5 rounded-2xl bg-white text-black font-black uppercase text-xs tracking-widest flex items-center justify-center gap-3 hover:bg-zinc-200 transition">
-                            <i class="fa-solid fa-diamond-turn-right"></i> Abrir no GPS
-                        </a>
+                    <div class="my-20 p-12 bg-zinc-900 rounded-[3rem] border border-green-500/30">
+                        <h3 class="text-3xl font-black uppercase text-white mb-4">A bateria do seu iPhone está viciada?</h3>
+                        <p class="text-zinc-400 mb-8">A ABC Smart oferece diagnósticos precisos, substituição de baterias de alta qualidade e orientações especializadas para garantir que seu dispositivo funcione perfeitamente.</p>
+                        <a href="https://api.whatsapp.com/send?phone=5511992305742" class="whatsapp-btn px-8 py-4 rounded-2xl text-black font-black uppercase text-xs inline-flex items-center gap-3"><i class="fa-brands fa-whatsapp"></i> Chamar Assistência Técnica</a>
                     </div>
                 </div>
             </div>
-        </section>
+        </article>
+    </div>
 
-        <!-- CTA Final -->
-        <section class="py-20 bg-zinc-950 text-white border-t border-white/5">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl lg:text-6xl font-[900] uppercase tracking-tighter italic mb-8">Seu aparelho <br> merece o melhor.</h2>
-                <a href="https://api.whatsapp.com/send?phone=5511992305742" class="whatsapp-btn px-12 py-6 rounded-full text-black font-[900] uppercase text-sm tracking-widest inline-flex items-center gap-4 hover:shadow-green-500/20 transition">
-                    <i class="fa-brands fa-whatsapp text-2xl"></i>
-                    Iniciar Atendimento
+    <!-- Artigo: Samsung não carrega -->
+    <div id="page-post-samsung" class="hidden-section">
+        <article class="pt-40 pb-32">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <header class="mb-16">
+                    <button onclick="navigateTo('home')" class="mb-12 flex items-center gap-3 text-zinc-500 hover:text-white transition group">
+                        <i class="fa-solid fa-arrow-left transition group-hover:-translate-x-1"></i>
+                        <span class="text-xs font-black uppercase tracking-widest">Voltar para Início</span>
+                    </button>
+                    <div class="flex items-center gap-4 mb-8">
+                        <span class="px-4 py-1 rounded-full bg-blue-500/10 text-blue-500 border border-blue-500/20 text-[10px] font-black uppercase tracking-widest italic">Solução Técnica</span>
+                        <span class="text-zinc-600 text-[10px] font-bold uppercase tracking-widest">Leitura: 5 min</span>
+                    </div>
+                    <h1 class="text-4xl lg:text-7xl font-[900] uppercase italic tracking-tighter leading-none text-white mb-10">Celular Samsung não carrega: Problema no cabo ou no aparelho?</h1>
+                    <div class="rounded-[3rem] overflow-hidden border border-white/10 aspect-video mb-16">
+                        <img src="https://images.unsplash.com/photo-1583573636246-18cb2246697f?q=80&w=1338&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-full h-full object-cover">
+                    </div>
+                </header>
+                <div class="prose max-w-none text-zinc-400">
+                    <p class="text-xl italic font-medium text-white mb-12">Seu celular Samsung não carrega e você está se perguntando onde pode estar o problema? Na ABC Smart, entendemos a frustração de lidar com um dispositivo que não funciona corretamente.</p>
+                    
+                    <h2>Celular Samsung não carrega, onde pode estar o problema?</h2>
+                    <p>Quando você conecta e seu celular Samsung não carrega, isso pode ser extremamente frustrante. Este problema pode surgir repentinamente e, muitas vezes, a causa está relacionada aos conectores de carga.</p>
+                    
+                    <h3>Conectores</h3>
+                    <p>Sujeira, poeira ou detritos acumulados no conector de carga do celular podem impedir a conexão adequada entre o carregador e o dispositivo. O uso frequente e indevido também pode causar danos físicos, como pinos dobrados ou quebrados.</p>
+                    <p>Desligue o celular para evitar danos enquanto inspeciona o conector. Use uma lanterna para verificar se há sujeira ou detritos dentro do conector de carga e retirar a sujeira com cuidado. Teste o cabo de carregamento em outro dispositivo para garantir que ele esteja funcionando corretamente.</p>
+                    
+                    <h3>Cabo</h3>
+                    <p>Com o tempo, o cabo de carregamento pode sofrer desgaste, especialmente nos pontos onde é mais dobrado ou tensionado. Fios internos podem se romper, impedindo a transferência de energia. Cabos de baixa qualidade muitas vezes não fornecem a quantidade adequada de energia.</p>
+                    <p>Examine visualmente o cabo para verificar se há sinais de desgaste, como fios expostos, dobras severas ou conectores soltos. Se notar algum dano visível, substitua o cabo por um novo para ver se isso resolve o problema.</p>
+                    
+                    <h3>O que fazer se o problema estiver no Aparelho Samsung</h3>
+                    <p>Se você já verificou o cabo e o carregador e eles estão funcionando corretamente, o problema pode estar no próprio celular Samsung que não carrega. Examine a porta de carregamento com uma lanterna para identificar qualquer sujeira. Se o seu modelo permitir, substitua a bateria por uma nova; o problema pode estar nela. Também verifique se há atualizações de software disponíveis; atualize o sistema operacional e reinicie o celular.</p>
+
+                    <div class="my-20 p-12 bg-zinc-900 rounded-[3rem] border border-blue-500/30 text-white">
+                        <h3 class="text-3xl font-black uppercase mb-4 italic">Samsung parou de vez?</h3>
+                        <p class="text-zinc-400 mb-8">Nossos técnicos são certificados e possuem vasta experiência em toda a linha Galaxy. Diagnóstico preciso e reparos de placa com garantia real.</p>
+                        <a href="https://api.whatsapp.com/send?phone=5511992305742" class="whatsapp-btn px-8 py-4 rounded-2xl text-black font-black uppercase text-xs inline-flex items-center gap-3"><i class="fa-brands fa-whatsapp"></i> Orçamento Samsung</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <!-- Artigo: Wi-Fi Notebook -->
+    <div id="page-post-wifi" class="hidden-section">
+        <article class="pt-40 pb-32">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <header class="mb-16">
+                    <button onclick="navigateTo('home')" class="mb-12 flex items-center gap-3 text-zinc-500 hover:text-white transition group">
+                        <i class="fa-solid fa-arrow-left transition group-hover:-translate-x-1"></i>
+                        <span class="text-xs font-black uppercase tracking-widest">Voltar para Início</span>
+                    </button>
+                    <div class="flex items-center gap-4 mb-8">
+                        <span class="px-4 py-1 rounded-full bg-zinc-500/10 text-zinc-400 border border-zinc-500/20 text-[10px] font-black uppercase tracking-widest italic">Diagnóstico PC</span>
+                        <span class="text-zinc-600 text-[10px] font-bold uppercase tracking-widest">Leitura: 6 min</span>
+                    </div>
+                    <h1 class="text-4xl lg:text-7xl font-[900] uppercase italic tracking-tighter leading-none text-white mb-10">Wifi do notebook não ativa, e agora?</h1>
+                    <div class="rounded-[3rem] overflow-hidden border border-white/10 aspect-video mb-16">
+                        <img src="https://images.unsplash.com/photo-1516044734145-07ca8eef8731?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-full h-full object-cover">
+                    </div>
+                </header>
+                <div class="prose max-w-none text-zinc-400">
+                    <p class="text-xl italic font-medium text-white mb-12">Você está pronto para trabalhar ou estudar, mas de repente percebe que o Wi-fi do notebook não ativa. Na ABC Smart, estamos aqui para ajudar você a resolver isso.</p>
+                    
+                    <h2>Verifique as Configurações e Conexões</h2>
+                    <p>A causa do problema pode variar. Às vezes, configurações incorretas podem estar fazendo com que o Wi-fi do notebook não ative. Acesse as configurações de rede do seu dispositivo e verifique se o Wi-fi está habilitado. Às vezes, um simples reinício também pode resolver muitos problemas de conectividade.</p>
+                    
+                    <h2>Verifique o Interruptor de Wi-Fi</h2>
+                    <p>Muitos aparelhos têm um interruptor físico na lateral ou na parte frontal que permite ligar ou desligar o Wi-Fi. Primeiro, procure esse interruptor físico; ele geralmente tem o ícone de uma antena. Se estiver desativado, mova-o para a posição ativada. Se estiver usando uma combinação de teclas (Fn + Wi-Fi), pressione-as para ativar e aguarde alguns segundos.</p>
+                    
+                    <h2>Como Identificar Problemas de Hardware</h2>
+                    <p>A causa mais comum é um problema de hardware. Verifique se o adaptador Wi-Fi está funcionando corretamente através do Gerenciador de Dispositivos e veja se há avisos ou erros. Também faça uma inspeção visual por antenas soltas, portas danificadas ou qualquer componente fora do lugar.</p>
+                    
+                    <h2>Como Identificar Problemas de Software</h2>
+                    <p>Os drivers são essenciais. Verifique se os drivers do adaptador estão atualizados e funcionando. Além disso, configurações de rede incorretas podem impedir a ativação. Verifique o SSID, a senha e outros parâmetros relevantes nas definições do sistema operacional.</p>
+
+                    <div class="my-20 p-12 bg-zinc-900 rounded-[3rem] border border-zinc-500/30">
+                        <h3 class="text-3xl font-black uppercase text-white mb-4 italic">Sem Internet no Notebook?</h3>
+                        <p class="text-zinc-400 mb-8">Nossa equipe é especialista em conserto de notebooks de todas as marcas (Dell, HP, Acer, Lenovo). Garantimos agilidade na solução do seu problema de rede.</p>
+                        <a href="https://api.whatsapp.com/send?phone=5511992305742" class="whatsapp-btn px-8 py-4 rounded-2xl text-black font-black uppercase text-xs inline-flex items-center gap-3"><i class="fa-brands fa-whatsapp"></i> Iniciar Chamado Técnico</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <!-- Novo Footer Social -->
+    <section class="py-20 bg-black border-t border-white/5">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-white font-[900] uppercase italic tracking-tighter text-3xl mb-12">Acompanhe nossas <br> <span class="text-outline-white">Redes Sociais.</span></h3>
+            <div class="flex justify-center gap-8 mb-16">
+                <a href="https://www.instagram.com/abcsmart.assistencia?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center text-2xl hover:bg-white hover:text-black transition duration-500">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/ABCSMARTCELULARES/" target="_blank" class="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center text-2xl hover:bg-white hover:text-black transition duration-500">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="https://api.whatsapp.com/send?phone=5511992305742" target="_blank" class="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center text-2xl hover:bg-green-500 hover:text-black hover:border-green-500 transition duration-500">
+                    <i class="fa-brands fa-whatsapp"></i>
                 </a>
             </div>
-        </section>
-    </main>
+            <div class="max-w-md mx-auto p-8 bg-zinc-900/50 rounded-3xl border border-white/5">
+                <p class="text-zinc-500 text-sm font-medium italic mb-6">Precisa de um diagnóstico rápido? Mande uma foto do seu aparelho no nosso WhatsApp.</p>
+                <a href="https://api.whatsapp.com/send?phone=5511992305742" class="text-green-500 font-black uppercase text-xs tracking-widest">Enviar Mensagem Agora →</a>
+            </div>
+        </div>
+    </section>
 
     <footer class="bg-black text-zinc-600 py-12 border-t border-white/5 text-xs font-bold uppercase tracking-widest text-center">
         <div class="container mx-auto px-6">
-            <p>&copy; 2024 ABC SMART Assistência Técnica. Referência desde 2005.</p>
-            <p class="mt-4 text-[10px] text-zinc-800 font-black">Rua Siqueira Campos, 660 - CENTRO, Santo André - SP</p>
+            <p>&copy; 2024 ABC SMART Assistência Técnica. Referência desde 2005 em Santo André.</p>
+            <p class="mt-4 text-[10px] text-zinc-800 font-black">Rua Siqueira Campos, 660 - CENTRO</p>
         </div>
     </footer>
 
     <script>
         gsap.registerPlugin(ScrollTrigger);
+        let currentPage = 'home';
+
+        function navigateTo(pageId) {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            const currentEl = document.getElementById('page-' + currentPage);
+            const nextEl = document.getElementById('page-' + pageId);
+
+            gsap.to(currentEl, {
+                opacity: 0,
+                duration: 0.3,
+                onComplete: () => {
+                    currentEl.classList.add('hidden-section');
+                    nextEl.classList.remove('hidden-section');
+                    gsap.fromTo(nextEl, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 });
+                    currentPage = pageId;
+                    ScrollTrigger.refresh();
+                }
+            });
+        }
 
         window.onscroll = function() {
             let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             let scrolled = (winScroll / height) * 100;
             document.getElementById("progress-bar").style.width = scrolled + "%";
+            
+            const header = document.getElementById('header');
+            if (winScroll > 50) {
+                header.style.padding = '10px 0';
+                header.style.backgroundColor = 'rgba(8, 8, 8, 0.95)';
+            } else {
+                header.style.padding = '20px 0';
+                header.style.backgroundColor = 'rgba(8, 8, 8, 0.8)';
+            }
         };
 
-        gsap.to(".reveal-init", {
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            stagger: 0.1,
-            ease: "power3.out"
-        });
+        // Animações Iniciais
+        gsap.to(".reveal-init", { y: 0, opacity: 1, duration: 1, stagger: 0.1, ease: "power3.out" });
 
-        const revealElements = document.querySelectorAll(".reveal-scroll");
-        revealElements.forEach((element) => {
+        // Animações de Scroll
+        document.querySelectorAll(".reveal-scroll").forEach((element) => {
             gsap.to(element, {
                 scrollTrigger: {
                     trigger: element,
@@ -598,21 +812,13 @@
             });
         });
 
-        const faqItems = document.querySelectorAll('#faq button');
-        faqItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const answer = item.nextElementSibling;
-                answer.classList.toggle('hidden');
-                const icon = item.querySelector('span:last-child');
-                icon.textContent = answer.classList.contains('hidden') ? '+' : '-';
-                
-                if(!answer.classList.contains('hidden')) {
-                    item.querySelector('span:first-child').classList.remove('text-zinc-400');
-                    item.querySelector('span:first-child').classList.add('text-white');
-                } else {
-                    item.querySelector('span:first-child').classList.add('text-zinc-400');
-                    item.querySelector('span:first-child').classList.remove('text-white');
-                }
+        // FAQ Logic
+        document.querySelectorAll('.faq-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const p = btn.nextElementSibling;
+                p.classList.toggle('hidden');
+                const icon = btn.querySelector('span:last-child');
+                icon.textContent = p.classList.contains('hidden') ? '+' : '-';
             });
         });
     </script>
